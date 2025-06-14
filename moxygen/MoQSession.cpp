@@ -2247,7 +2247,7 @@ void MoQSession::onSubscribeDone(SubscribeDone subscribeDone) {
     XLOG(DFATAL) << "trackAliasIt but no trackReceiveStateIt for id="
                  << subscribeDone.requestID << " sess=" << this;
   }
-  subIdToTrackAlias_.erase(trackAliasIt);
+  subIdToTrackAlias_.erase(subscribeDone.requestID);
   checkForCloseOnDrain();
 }
 
